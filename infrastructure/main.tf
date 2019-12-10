@@ -74,7 +74,7 @@ data "aws_ami" "ubuntuimg" {
 
 resource "aws_instance" "apisummitec2instance" {
   ami           = data.aws_ami.ubuntuimg.id
-  instance_type = "t2.micro"
+  instance_type = "t2.large"
   count         = 2
   tags          = merge(local.all_tags, { Name = "apisummitinstance" })
 }
